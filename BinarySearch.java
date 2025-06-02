@@ -1,6 +1,4 @@
-import edu.princeton.cs.algs4.In;
-import edu.princeton.cs.algs4.StdIn;
-import edu.princeton.cs.algs4.StdOut;
+import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -25,15 +23,20 @@ public class BinarySearch {
     }
 
     public static void main(String[] args) {
-        int[] whitelist = new In(args[0]).readAllInts();
+        int[] whitelist = NumList.nums();
+
         Arrays.sort(whitelist);
 
-        while (!StdIn.isEmpty()) {
-            int key = StdIn.readInt();
+        Scanner sc = new Scanner(System.in, Charset.defaultCharset());
+
+        while (!sc.hasNext()) {
+            int key = sc.nextInt();
 
             if (rank(key, whitelist) == -1) {
-                StdOut.println(key);
+                System.out.println(key);
             }
         }
+
+        sc.close();
     }
 }
