@@ -1,3 +1,3 @@
 # algos
 
-->> Algorithms by Sedgewick and Wayne
+->> Introduction to Algorithms by CLRS
